@@ -184,6 +184,35 @@
             display: block;
             margin: 0 auto; /* 水平居中 */
         }
+
+        .performance_container {
+            background-color: #2E3B4E;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+            display: flex;
+            justify-content: space-between; /* 让图片左右对齐 */
+            align-items: center;
+        }
+
+        .performance_item {
+            text-align: center; /* 让图片和标题居中 */
+            width: 45%; /* 控制每个图片的宽度 */
+        }
+
+        .performance_image {
+            width: 100%; /* 使图片自适应容器宽度 */
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .performance_title {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -346,6 +375,19 @@
       });
   });
 </script>
+
+<!-- Performance -->
+<h1 style="text-align: center; color: #556B2F;">&lt;Performance&gt;</h1>
+<div class="performance_container">
+    <div class="performance_item">
+        <img src="assets/img/coarse_gran_performance.png" alt="Performance 1" class="performance_image">
+        <h3 class="performance_title">Coarse-Grained Administration</h3>
+    </div>
+    <div class="performance_item">
+        <img src="assets/img/fine_gran_performance.png" alt="Performance 2" class="performance_image">
+        <h3 class="performance_title">Fine-Grained Administration</h3>
+    </div>
+</div>
 
 
 
