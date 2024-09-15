@@ -24,6 +24,10 @@
             flex: 1;
             padding-right: 20px;
         }
+        .text-content .titles {
+            text-align: center;
+            margin-bottom: 20px;
+        }
         .text-content h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
@@ -54,8 +58,10 @@
 
 <div class="container">
     <div class="text-content">
-        <h1>Mining Mine</h1>
-        <h2>Scalable and Efficient Cache Eviction</h2>
+        <div class="titles">
+            <h1>Mining Mine</h1>
+            <h2>Scalable and Efficient Cache Eviction</h2>
+        </div>
 
         <div class="features">
             <p><span>Efficient:</span> up to 72% lower miss ratio than LRU</p>
@@ -67,9 +73,10 @@
         </div>
     </div>
 
-    <div class="image-container">
-        <img src="/mnt/data/image.png" alt="Dataset Demo">
-    </div>
+    <div class="chart-container">
+      {% assign demo_image_path = 'mine_demo1.jpg' | prepend: 'assets/img/' %}
+      <img src="{{ demo_image_path }}" alt="Dataset Demo">
+   </div>
 </div>
 
 </body>
