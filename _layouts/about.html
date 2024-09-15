@@ -263,12 +263,24 @@
   </div>
 </div>
 
-<!-- Our Missions -->
-<h1 style="color: black; text-align: center;">Our Solution</h1>
-<div class="container">
-  <div style="color: orange; text-align: center; line-height: 1.8; font-size: 1.6rem;">
-      <p>Real-time, Scalable Pipeline in Cloud</p>
-  </div>
+<!-- Our Solutions -->
+<div class="header">
+  <h1>Our Solution</h1>
+  <h2 id="typewriter"></h2>
+  <script>
+      const text = "Real-time, Scalable Pipeline in Cloud";
+      let index = 0;
+      const speed = 100; // 打字速度（毫秒）
+
+      function typeWriter() {
+          if (index < text.length) {
+              document.getElementById("typewriter").innerHTML = text.substring(0, index + 1);
+              index++;
+              setTimeout(typeWriter, speed);
+          }
+      }
+      window.onload = typeWriter;
+  </script>
 </div>
 
 
