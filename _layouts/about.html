@@ -133,6 +133,54 @@
           border-radius: 10px;
           width: 80%;
         }
+
+        .solution_container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #3B4A61;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px;
+            cursor: pointer;
+            background-color: #49566F;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #657899;
+        }
+
+        .tab.active {
+            background-color: #FFA726;
+            color: #000;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -266,22 +314,38 @@
 <!-- Our Solutions -->
 <div class="header">
   <h1>Our Solution</h1>
-  <h2 id="typewriter"></h2>
-  <script>
-      const text = "Real-time, Scalable Pipeline in Cloud";
-      let index = 0;
-      const speed = 100; // 打字速度（毫秒）
-
-      function typeWriter() {
-          if (index < text.length) {
-              document.getElementById("typewriter").innerHTML = text.substring(0, index + 1);
-              index++;
-              setTimeout(typeWriter, speed);
-          }
-      }
-      window.onload = typeWriter;
-  </script>
 </div>
+<div class="solution_container">
+  <div class="tabs">
+      <div class="tab active" data-tab="1">Coarse-Grain Administration</div>
+      <div class="tab" data-tab="2">Fine-Grain Administration</div>
+  </div>
+
+  <div class="tab-content active" id="tab-1">
+      <img src="assets/img/coarse_grain.png" alt="Image for Tab 1">
+  </div>
+  <div class="tab-content" id="tab-2">
+      <img src="assets/img/fine_grain.png" alt="Image for Tab 2">
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+          // Remove active class from all tabs and content
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add('active');
+          document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
+      });
+  });
+</script>
+
 
 
 </body>
