@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accurate Mining Activities Administraction</title>
+    <title>Accurate Mining Activities Administration</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,14 +27,18 @@
         .container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             width: 100%;
             margin: 0 auto;
             padding: 20px;
+            background-color: #fff; /* 设置container背景色为白色 */
         }
         .text-content {
             flex: 1;
             padding-right: 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
         .features p {
             font-size: 1.2rem;
@@ -46,13 +50,18 @@
         }
         .image-container {
             flex: 0 0 40%; /* 限制图片容器宽度为40% */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .image-container img {
             width: 100%;
             height: auto;
             max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* 确保图片保持比例并适应容器 */
+            max-height: 100%; /* 确保图片不会超过容器 */
+            object-fit: contain;
+            /* 新增内容：图片高度最大为左侧文字容器的高度 */
+            max-height: calc(100vh - 40px); /* 限制图片高度不超过左侧文字的高度 */
         }
     </style>
 </head>
@@ -78,9 +87,9 @@
     </div>
 
     <div class="image-container">
-      {% assign demo_image_path = 'mine_demo1.jpg' | prepend: 'assets/img/' %}
-      <img src="{{ demo_image_path }}" alt="Dataset Demo">
-   </div>
+        {% assign demo_image_path = 'mine_demo1.jpg' | prepend: 'assets/img/' %}
+        <img src="{{ demo_image_path }}" alt="Dataset Demo">
+    </div>
 </div>
 
 </body>
