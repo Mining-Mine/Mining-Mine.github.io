@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mining Mine</title>
+    <title>Scalable and Efficient Cache Eviction</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,56 +12,51 @@
             background-color: #f4f4f4;
         }
         .container {
-            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            text-align: center;
         }
-        h1 {
-            font-size: 3rem;
-            margin: 20px 0;
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
         }
-        .features {
-            margin-top: 20px;
-            text-align: left;
+        .text-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .text-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .features p {
             font-size: 1.2rem;
+            line-height: 1.6;
         }
         .features span {
             color: orange;
             font-weight: bold;
         }
-        .chart-container {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
+        .image-container {
+            flex: 1;
         }
-        img {
-            max-width: 100%;
+        .image-container img {
+            width: 100%;
             height: auto;
-        }
-        .buttons {
-            margin-top: 40px;
-        }
-        .buttons a {
-            text-decoration: none;
-            margin: 10px;
-            padding: 15px 30px;
-            background-color: black;
-            color: white;
-            font-size: 1rem;
             border-radius: 5px;
-            display: inline-block;
-        }
-        .buttons a:hover {
-            background-color: #444;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+<div class="container">
+    <div class="text-content">
         <h1>Mining Mine</h1>
         <h2>Scalable and Efficient Cache Eviction</h2>
-        
+
         <div class="features">
             <p><span>Efficient:</span> up to 72% lower miss ratio than LRU</p>
             <p><span>Robust:</span> evaluated on 6594 workloads from 12 companies</p>
@@ -70,18 +65,12 @@
             <p><span>Flash-friendly:</span> sequential writes only</p>
             <p>* appear in SOSP'23</p>
         </div>
-        
-        <div class="chart-container">
-          {% assign demo_image_path = 'mine_demo1.jpg' | prepend: 'assets/img/' %}
-          <img src="{{ demo_image_path }}" alt="Dataset Demo">
-        </div>
-        
-        <div class="buttons">
-            <a href="#">Learn More</a>
-            <a href="#">Paper</a>
-            <a href="#">Watch Video</a>
-            <a href="#">Slides</a>
-        </div>
     </div>
+
+    <div class="image-container">
+        <img src="/mnt/data/image.png" alt="Dataset Demo">
+    </div>
+</div>
+
 </body>
 </html>
