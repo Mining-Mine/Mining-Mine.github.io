@@ -13,7 +13,7 @@ profile:
   title: Pre-Doctoral M.S., University of Chicago, CS
   email: peiranqin@uchicago.edu
   address: 5035 East End, Chicago, IL
-  code_link: https://github.com/QinPR
+  code_link: https://github.com/Mining-Mine
   cv: peiran_cv.pdf
   phone: +1 (773) 812 5328
 
