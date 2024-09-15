@@ -134,13 +134,51 @@
     </script>
 </div>
 
+<!-- 轮播脚本 -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slides img");
+  const dots = document.querySelectorAll(".dot");
+
+  function updateSlides() {
+      // 隐藏所有图片
+      slides.forEach(slide => {
+          slide.style.display = "none";
+      });
+
+      // 增加当前的slide索引
+      currentSlide++;
+      if (currentSlide >= slides.length) currentSlide = 0;
+
+      // 显示当前slide
+      slides[currentSlide].style.display = "block";
+
+      // 更新导航点
+      updateDots();
+      setTimeout(updateSlides, 3000); 
+  }
+
+  function updateDots() {
+      dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+              dot.classList.add("active");
+          } else {
+              dot.classList.remove("active");
+          }
+      });
+  }
+
+  // 初始化轮播
+  updateSlides();
+</script>
+
 <!-- 内容区域 -->
 <div class="container">
     <!-- 文本内容 -->
     <div class="text-content">
         <div class="features">
             <p><span><strong><u>Accurate</u></strong>:</span> Accuracy up to 85% - 95%.</p>
-            <p><span><strong><u>Scalable</u></strong>:</span> Deployed on AWS cloud for large-scale data.</p>
+            <p><span><strong><u>Scalable</u></strong>:</span> Deployed on AWS cloud for large-scale processing.</p>
             <p><span><strong><u>Real-Time</u></strong>:</span> End-to-end pipeline analyzing real-time data source.</p>
             <p><span><strong><u>Accessible</u></strong>:</span> Free to download our labeled dataset.</p>
             <p><span><strong><u>We are expanding!</u></strong></span> Dataset and computing keep scaling.</p>
@@ -167,45 +205,27 @@
             <span class="dot"></span>
         </div>
     </div>
+
+    <!-- 按钮容器 -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://your-paper-link.com" target="_blank">
+          <button style="background-color: orange; color: white; padding: 15px 25px; font-size: 16px; border: none; border-radius: 5px; margin: 10px; cursor: pointer;">
+              Paper
+          </button>
+      </a>
+      <a href="https://your-code-link.com" target="_blank">
+          <button style="background-color: orange; color: white; padding: 15px 25px; font-size: 16px; border: none; border-radius: 5px; margin: 10px; cursor: pointer;">
+              Code
+          </button>
+      </a>
+      <a href="https://your-dataset-link.com" target="_blank">
+          <button style="background-color: orange; color: white; padding: 15px 25px; font-size: 16px; border: none; border-radius: 5px; margin: 10px; cursor: pointer;">
+              Download Dataset
+          </button>
+      </a>
+    </div>
 </div>
 
-<!-- 轮播脚本 -->
-<script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slides img");
-    const dots = document.querySelectorAll(".dot");
-
-    function updateSlides() {
-        // 隐藏所有图片
-        slides.forEach(slide => {
-            slide.style.display = "none";
-        });
-
-        // 增加当前的slide索引
-        currentSlide++;
-        if (currentSlide >= slides.length) currentSlide = 0;
-
-        // 显示当前slide
-        slides[currentSlide].style.display = "block";
-
-        // 更新导航点
-        updateDots();
-        setTimeout(updateSlides, 3000); 
-    }
-
-    function updateDots() {
-        dots.forEach((dot, index) => {
-            if (index === currentSlide) {
-                dot.classList.add("active");
-            } else {
-                dot.classList.remove("active");
-            }
-        });
-    }
-
-    // 初始化轮播
-    updateSlides();
-</script>
 
 </body>
 </html>
