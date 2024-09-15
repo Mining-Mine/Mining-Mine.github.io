@@ -22,11 +22,13 @@
         }
         h2 {
             font-family: Arial, sans-serif;
-            font-size: 20px;
+            font-size: 24px;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid;
-            width: 0;
+            position: relative;
+            text-align: center;
+            width: fit-content; /* 动态调整宽度 */
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
 
@@ -79,7 +81,7 @@
             max-height: 100%; /* 确保图片不会超过容器 */
             object-fit: contain;
             /* 新增内容：图片高度最大为左侧文字容器的高度 */
-            max-height: 40vh; /* 限制图片高度不超过左侧文字的高度 */
+            max-height: 30vh; /* 限制图片高度不超过左侧文字的高度 */
         }
     </style>
 </head>
@@ -88,7 +90,22 @@
 <!-- 标题和副标题居中在顶部 -->
 <div class="header">
     <h1>Mining Mine</h1>
-    <h2>Accurate Mining Activities Administration</h2>
+    <h2 id="typewriter"></h2>
+    <script>
+        const text = "Accurate Mining Activities Administration";
+        let index = 0;
+        const speed = 100; // typing speed in milliseconds
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
 </div>
 
 <!-- 文字和图片并排布局 -->
