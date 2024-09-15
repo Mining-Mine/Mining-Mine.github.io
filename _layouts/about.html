@@ -46,12 +46,14 @@
             font-weight: bold;
         }
         .image-container {
-            flex: 0 0 40%; /* 图片宽度占页面的40% */
+            flex: 0 0 40%; /* 限制图片容器宽度为40% */
         }
         .image-container img {
             width: 100%;
             height: auto;
-            border-radius: 5px;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* 确保图片保持比例并适应容器 */
         }
     </style>
 </head>
