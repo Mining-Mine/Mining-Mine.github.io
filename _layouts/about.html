@@ -74,6 +74,7 @@
             width: 100%;
             max-height: 35vh;
             object-fit: contain;
+            display: none; /* 默认隐藏所有图片 */
         }
 
         /* 添加导航点 */
@@ -120,7 +121,7 @@
         const text = "Accurate Mining Activities Administration";
         let index = 0;
         const speed = 100; // 打字速度（毫秒）
-    
+
         function typeWriter() {
             if (index < text.length) {
                 document.getElementById("typewriter").innerHTML = text.substring(0, index + 1);
@@ -128,7 +129,7 @@
                 setTimeout(typeWriter, speed);
             }
         }
-    
+
         window.onload = typeWriter;
     </script>
 </div>
@@ -169,4 +170,37 @@
     const slides = document.querySelectorAll(".slides img");
     const dots = document.querySelectorAll(".dot");
 
-    function 
+    function updateSlides() {
+        // 隐藏所有图片
+        slides.forEach(slide => {
+            slide.style.display = "none";
+        });
+
+        // 增加当前的slide索引
+        currentSlide++;
+        if (currentSlide >= slides.length) currentSlide = 0;
+
+        // 显示当前slide
+        slides[currentSlide].style.display = "block";
+
+        // 更新导航点
+        updateDots();
+        setTimeout(updateSlides, 2000); // 每2秒切换图片
+    }
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === currentSlide) {
+                dot.classList.add("active");
+            } else {
+                dot.classList.remove("active");
+            }
+        });
+    }
+
+    // 初始化轮播
+    updateSlides();
+</script>
+
+</body>
+</html>
