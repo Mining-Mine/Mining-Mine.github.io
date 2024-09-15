@@ -11,6 +11,19 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #fff;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
         .container {
             display: flex;
             justify-content: space-between;
@@ -24,18 +37,6 @@
             flex: 1;
             padding-right: 20px;
         }
-        .text-content .titles {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .text-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .text-content h2 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
         .features p {
             font-size: 1.2rem;
             line-height: 1.6;
@@ -45,7 +46,7 @@
             font-weight: bold;
         }
         .image-container {
-            flex: 1;
+            flex: 0 0 40%; /* 图片宽度占页面的40% */
         }
         .image-container img {
             width: 100%;
@@ -56,13 +57,15 @@
 </head>
 <body>
 
+<!-- 标题和副标题居中在顶部 -->
+<div class="header">
+    <h1>Mining Mine</h1>
+    <h2>Scalable and Efficient Cache Eviction</h2>
+</div>
+
+<!-- 文字和图片并排布局 -->
 <div class="container">
     <div class="text-content">
-        <div class="titles">
-            <h1>Mining Mine</h1>
-            <h2>Scalable and Efficient Cache Eviction</h2>
-        </div>
-
         <div class="features">
             <p><span>Efficient:</span> up to 72% lower miss ratio than LRU</p>
             <p><span>Robust:</span> evaluated on 6594 workloads from 12 companies</p>
