@@ -1,7 +1,3 @@
----
-layout: default
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,8 +72,8 @@ layout: default
         </div>
         
         <div class="chart-container">
-            {%- assign figure1_name = mine_6.22709122239849_-2.012276805398611.jpg | prepend: '_figures/' -%}
-            <img src="../_figures/mine_6.22709122239849_-2.012276805398611.jpg" alt="Dataset Demo">
+          {% assign demo_image_path = 'mine_demo1.jpg' | prepend: 'assets/img/' %}
+          <img src="{{ demo_image_path }}" alt="Dataset Demo">
         </div>
         
         <div class="buttons">
