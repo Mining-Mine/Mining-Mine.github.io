@@ -109,6 +109,22 @@
                 padding-right: 0;
             }
         }
+
+        .custom-button {
+            background-color: #007BFF; /* 蓝色 */
+            color: white;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* 平滑过渡效果 */
+        }
+
+        .custom-button:hover {
+            background-color: #0056b3; /* 鼠标移上去时颜色变深 */
+        }
     </style>
 </head>
 <body>
@@ -205,25 +221,25 @@
             <span class="dot"></span>
         </div>
     </div>
+</div>
 
-    <!-- 按钮容器 -->
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="https://your-paper-link.com" target="_blank">
-          <button style="background-color: orange; color: white; padding: 15px 25px; font-size: 16px; border: none; border-radius: 5px; margin: 10px; cursor: pointer;">
-              Paper
-          </button>
-      </a>
-      <a href="https://your-code-link.com" target="_blank">
-          <button style="background-color: orange; color: white; padding: 15px 25px; font-size: 16px; border: none; border-radius: 5px; margin: 10px; cursor: pointer;">
-              Code
-          </button>
-      </a>
-      <a href="https://your-dataset-link.com" target="_blank">
-          <button style="background-color: orange; color: white; padding: 15px 25px; font-size: 16px; border: none; border-radius: 5px; margin: 10px; cursor: pointer;">
-              Download Dataset
-          </button>
-      </a>
-    </div>
+<!-- 按钮容器 -->
+<div style="text-align: center; margin-top: 20px;">
+  <a href="https://your-paper-link.com" target="_blank">
+      <button class="custom-button">
+          Paper
+      </button>
+  </a>
+  <a href="https://your-code-link.com" target="_blank">
+      <button class="custom-button">
+          Code
+      </button>
+  </a>
+  <a href="https://your-dataset-link.com" target="_blank">
+      <button class="custom-button">
+          Download Dataset
+      </button>
+  </a>
 </div>
 
 
