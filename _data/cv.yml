@@ -1,0 +1,41 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Peiran Qin
+    - name: Date of Birth
+      value: 28th May 2001
+    - name: Languages
+      value: English, Chinese
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Pre-Doctral - Computer Science
+      institution: University of Chicago
+      year: 2023-now
+
+    - title: Bachelor of Engineering - Computer Engineering
+      institution: The Chinese University of Hong Kong, Shenzhen
+      year: 2019-2023
+      description:
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: UCARE Group, University of Chicago
+      institution: Research Assistant
+      year: 2023-now
+
+    - title: Networking Research Group, Microsoft Research Asia 
+      institution: Research Intern
+      year: 2022 
+      description:
+
+    - title: Alibaba DAMO Academy & CUHKSZ Collaborative Project
+      institution: Research Assistant
+      year: 2022
+
+    - title: Zhongshen Agricultural Innovation Technology Co., Ltd
+      institution: Software Engineer
+      year: 2021
