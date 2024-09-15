@@ -32,7 +32,10 @@
 
         /* 闪烁的光标 */
         .caret {
-            border-right: 3px solid black;
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: black;
             animation: blink-caret 0.75s step-end infinite;
         }
 
@@ -42,7 +45,7 @@
         }
         .container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             width: 90%;
             margin: 0 auto;
@@ -51,10 +54,10 @@
         }
         .text-content {
             flex: 1;
-            padding-right: 10px;
+            padding-right: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             flex-direction: column;
         }
         .features p {
@@ -64,11 +67,9 @@
         .features span {
             color: orange;
             font-weight: bold;
-            justify-content: center;
-            align-items: center;
         }
         .image-container {
-            flex: 0 0 50%; /* 限制图片容器宽度为40% */
+            flex: 0 0 45%; /* 缩小图片容器的宽度 */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -81,6 +82,18 @@
             object-fit: contain;
             /* 新增内容：图片高度最大为左侧文字容器的高度 */
             max-height: 35vh; /* 限制图片高度不超过左侧文字的高度 */
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .image-container {
+                flex: 0 0 100%;
+                margin-top: 20px;
+            }
+            .text-content {
+                padding-right: 0;
+            }
         }
     </style>
 </head>
@@ -111,17 +124,16 @@
 <div class="container">
     <div class="text-content">
         <div class="features">
-            <p><span>Accurate:</span> Accuracy up to 85% - 95%</p>
-            <p><span>Scalable:</span> Deployed on AWS cloud for large-scale data</p>
-            <p><span>Real-Time:</span> End-to-end pipline analyzing real-time data source</p>
-            <p><span>Accessible:</span> Free to download our labled dataset</p>
-            <p><span>We are expanding!</span> Dataset and computing keep scaling. </p>
+            <p><span><strong>Accurate</strong>:</span> Accuracy up to 85% - 95%.</p>
+            <p><span><strong>Scalable</strong>:</span> Deployed on AWS cloud for large-scale data.</p>
+            <p><span><strong>Real-Time</strong>:</span> End-to-end pipeline analyzing real-time data source.</p>
+            <p><span><strong>Accessible</strong>:</span> Free to download our labeled dataset.</p>
+            <p><span><strong>We are expanding!</strong></span> Dataset and computing keep scaling.</p>
         </div>
     </div>
 
     <div class="image-container">
-        {% assign demo_image_path = 'mine_demo1.jpg' | prepend: 'assets/img/' %}
-        <img src="{{ demo_image_path }}" alt="Dataset Demo">
+        <img src="image.png" alt="Dataset Demo">
     </div>
 </div>
 
