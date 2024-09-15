@@ -1,231 +1,86 @@
----
-layout: default
----
-
-<!-- about.html -->
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Work Experiences</title>
-        <style>
-            .work-experience {
-                list-style-type: none;
-                padding: 0;
-            }
-            .work-experience li {
-                margin-bottom: 1.5vh;
-                display: flex;
-                flex-direction: column;
-            }
-            .company-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: baseline;
-                flex-wrap: wrap;
-            }
-            .company-details {
-                display: flex;
-                align-items: baseline;
-            }
-            .company {
-                font-weight: bold;
-                margin-right: 1vw;
-            }
-            .advisor {
-                font-style: italic;
-            }
-            .role {
-                font-style: italic;
-            }
-            .duration {
-                font-style: italic;
-                align-self: flex-end;
-            }
-            .submission-list {
-                list-style-type: none;
-                padding: 0;
-            }
-            .submission-list li {
-                margin-bottom: 1.5vh;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-wrap: wrap;
-            }
-            .submission-list .left {
-                font-style: italic;
-                width: 25%;
-            }
-            .submission-list .right {
-                width: 70%;
-                display: flex;
-                flex-direction: column;
-            }
-            .submission-list .title {
-                font-weight: bold;
-            }
-        </style>
-      </head>
-
-      <div class="post">
-        <header class="post-header">
-          <h3 class="post-title" id="about-header">
-          {{ "About" }}
-          </h3>
-          <hr class="header-line" style="margin-bottom: 3vh;">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        </header>
-
-        <article>
-          <div class="profile-container">
-            <div class="profile-image">
-              {% if page.profile.image %}
-                {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-                {% assign profile_image_class = "img-fluid z-depth-1 rounded" %}
-                {% include figure.html path=profile_image_path class=profile_image_class style="max-width: 100%; height: auto;" alt=page.profile.image %}
-              {% endif %}
-            </div>
-            <div class="profile-info">
-              {% assign cv_path = page.profile.cv | prepend: 'assets/cv/' %}
-              <h3 style="margin-bottom: 1.5vh;"><strong>{{page.profile.name}}</strong></h3>
-              <h6 style="margin-bottom: 1vh;"><strong>{{page.profile.title}}</strong></h6>
-              <p><i class="fas fa-building"></i> Address: {{page.profile.address}}</p>
-              <p><i class="fas fa-envelope"></i> Email: {{page.profile.email}}</p>
-              <p><i class="fas fa-phone"></i> Phone: {{page.profile.phone}}</p>
-              <p><i class="fas fa-code"></i> Code: <a href="{{page.profile.code_link}}">[GitHub]</a></p>
-              <p><i class="fas fa-file-pdf"></i> Curriculum Vitae: <a href="{{ cv_path }}">[pdf]</a></p>
-            </div>
-          </div>
-
-          <div style="clear: both;">
-            {{ content }}
-          </div>
-        </article>
-
-        <!-- Education -->
-        <header class="post-header">
-          <h3 class="post-title" id="education-header">
-          {{ "Education" }}
-          </h3>
-          <hr class="header-line" style="margin-bottom: 3vh;">
-        </header>
-
-        <article>
-            <ul>
-              <li>{{page.education.master.title}}, {{page.education.master.major}}, {{page.education.master.university_name}}, {{page.education.master.time}}</li>
-              <li>{{page.education.bachelor.title}}, {{page.education.bachelor.major}}, {{page.education.bachelor.university_name}}, {{page.education.bachelor.time}}</li>
-            </ul>
-        </article>
-
-        <!-- Work Experience -->
-        <header class="post-header">
-          <h3 class="post-title" id="experience-header">
-          {{ "Work Experiences" }}
-          </h3>
-          <hr class="header-line" style="margin-bottom: 3vh;">
-        </header>
-
-        <article>
-          <ul class="work-experience">
-              <li>
-                  <div class="company-container">
-                    <div class="company-details">
-                        <div class="company">{{page.work.uchi.company_name}};</div>
-                        <div class="advisor">Advisor: {{page.work.uchi.advisor}}</div>
-                    </div>
-                    <div class="duration">{{page.work.uchi.time}}</div>
-                  </div>
-                  <div class="role">{{page.work.uchi.title}}, {{page.work.uchi.group}}</div>
-              </li>
-              <li>
-                <li>
-                  <div class="company-container">
-                    <div class="company-details">
-                        <div class="company">{{page.work.msra.company_name}};</div>
-                        <div class="advisor">Mentor: {{page.work.msra.advisor}}</div>
-                    </div>
-                    <div class="duration">{{page.work.msra.time}}</div>
-                  </div>
-                  <div class="role">{{page.work.msra.title}}, {{page.work.msra.group}}</div>
-              </li>
-              <li>
-                <li>
-                  <div class="company-container">
-                    <div class="company-details">
-                        <div class="company">{{page.work.alibaba.company_name}};</div>
-                        <div class="advisor">Advisor: {{page.work.alibaba.advisor}}</div>
-                    </div>
-                    <div class="duration">{{page.work.alibaba.time}}</div>
-                  </div>
-                  <div class="role">{{page.work.alibaba.title}}</div>
-              </li>
-              <li>
-                <li>
-                  <div class="company-container">
-                    <div class="company-details">
-                        <div class="company">{{page.work.zsnc.company_name}};</div>
-                        <div class="advisor">Advisor: {{page.work.zsnc.advisor}}</div>
-                    </div>
-                    <div class="duration">{{page.work.zsnc.time}}</div>
-                  </div>
-                  <div class="role">{{page.work.zsnc.title}}, {{page.work.zsnc.group}}</div>
-              </li>
-              <li>
-          </ul>
-        </article>
-
-        <!-- Publications -->
-        <header class="post-header">
-          <h3 class="post-title" id="pub-header">
-          {{ "Publications" }}
-          </h3>
-          <hr class="header-line" style="margin-bottom: 3vh;">
-        </header>
-
-        <article>
-          <ul class="submission-list">
-            <li>
-                <div class="left">{{page.pub1.status}}</div>
-                <div class="right">
-                    <div>{{page.pub1.authors}}.</div>
-                    <div class="title">{{page.pub1.title}}</div>
-                </div>
-            </li>
-            <li>
-              <div class="left">{{page.pub2.status}}</div>
-              <div class="right">
-                  <div>{{page.pub2.authors}}.</div>
-                  <div class="title">{{page.pub2.title}}</div>
-              </div>
-            </li>
-          </ul>
-        </article>
-
-        <!-- Misc. -->
-        <header class="post-header" id="misc-header">
-          <h3 class="post-title">
-          {{ "Misc." }}
-          </h3>
-          <hr class="header-line" style="margin-bottom: 3vh;">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        </header>
-
-        <article>
-          <div class="profile float-right">
-            {%- assign misc2_image_path = page.misc.image2 | prepend: 'assets/img/' -%}
-            {%- assign misc2_image_class = "img-fluid z-depth-1 rounded" -%}
-            {% include figure.html
-            path=misc2_image_path
-            class=misc2_image_class
-            style="width: 14vw; height: auto;"
-            alt=page.misc.image2 -%}
-          </div>
-
-          <div style="margin-bottom: 2vh;">
-            {{ page.misc.content1 }}
-          </div>
-          <div>
-            {{ page.misc.content2 }}
-          </div>
-        </article>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3-FIFO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+        .features {
+            margin-top: 20px;
+            text-align: left;
+            font-size: 1.2rem;
+        }
+        .features span {
+            color: orange;
+            font-weight: bold;
+        }
+        .chart-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .buttons {
+            margin-top: 40px;
+        }
+        .buttons a {
+            text-decoration: none;
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .buttons a:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>S3-FIFO</h1>
+        <h2>Scalable and Efficient Cache Eviction</h2>
+        
+        <div class="features">
+            <p><span>Efficient:</span> up to 72% lower miss ratio than LRU</p>
+            <p><span>Robust:</span> evaluated on 6594 workloads from 12 companies</p>
+            <p><span>Scalable:</span> NO locking</p>
+            <p><span>Simple:</span> FIFO queues only</p>
+            <p><span>Flash-friendly:</span> sequential writes only</p>
+            <p>* appear in SOSP'23</p>
+        </div>
+        
+        <div class="chart-container">
+            <img src="../_figures/mine_6.22709122239849_-2.012276805398611.jpg" alt="Cache Eviction Performance Chart">
+        </div>
+        
+        <div class="buttons">
+            <a href="#">Learn More</a>
+            <a href="#">Paper</a>
+            <a href="#">Watch Video</a>
+            <a href="#">Slides</a>
+        </div>
+    </div>
+</body>
+</html>
